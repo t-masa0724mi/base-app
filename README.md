@@ -1,24 +1,47 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
+| Column              | Type       | Options                        |
+|---------------------|------------|--------------------------------|
+| nickname            | string     | null: false                    |
+| email               | string     | null: false unique: true       |
+| encrypted_password  | string     | null: false                    |
+| last_name           | string     | null: false                    |
+| first_name          | string     | null: false                    |
+| birthday            | date       | null: false                    |
+| position_id         | integer    | null: false                    |
+| baseball_history    | integer    | null: false                    |
 
-Things you may want to cover:
+### Association
+-has_many :room_users
+-has_many :room, through: room_users
+-has_many :messages
 
-* Ruby version
+## rooms テーブル
+| Column              | Type       | Options                        |
+|---------------------|------------|--------------------------------|
+| name                | string     | null:false                     |
 
-* System dependencies
+### Association
+-has_many :room_users
+-has_many :users, through: room_users
+-has_many :messages
 
-* Configuration
+## room_users テーブル
+| Column              | Type       | Options                        |
+| user                | references | null: false, foreign_key: true |
 
-* Database creation
+### Association
+-belongs_to :room
+-belongs_to :user
 
-* Database initialization
+## messages テーブル
+| Column              | Type       | Options                        |
+|---------------------|------------|--------------------------------|
+| content             | string     |                                |
+| user                | references | null: false, foreign_key: true |
+| room                | references | null: false, foreign_key: true |
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+-belongs_to :room
+-belongs_to :user
