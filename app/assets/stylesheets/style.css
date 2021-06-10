@@ -85,14 +85,15 @@ a {
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
+  text-align: center;
 }
 
 .form__text {
-  width: 50%;
+  width: 80px;
 }
 
 .field{
-  margin: 10px 0;
+  margin: 30px 0;
 }
 
 .actions{

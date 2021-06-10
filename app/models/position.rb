@@ -5,7 +5,8 @@ class Position < ActiveHash::Base
     { id: 3, name: '捕手'},
     { id: 4, name: '内野手'},
     { id: 5, name: '外野手'},
-  }
-end
+  ]
+
 include ActiveHash::Associations
 has_many :users
+end
