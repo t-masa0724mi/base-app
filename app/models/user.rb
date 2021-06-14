@@ -21,6 +21,7 @@ class User < ApplicationRecord
       validates :first_name
     end
     validates :birthday
+    validates :image
     with_options numericality: { other_than: 1 } do
       validates :position_id
       validates :baseball_history_id
