@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many   :room_users
   has_many   :rooms, through: :romm_users
   has_many   :messages
+  has_many   :posts
   has_one_attached :image
 
   with_options presence: true do

@@ -16,6 +16,7 @@
 -has_many :room_users
 -has_many :room, through: room_users
 -has_many :messages
+-has_many :posts
 
 ## rooms テーブル
 | Column              | Type       | Options                        |
@@ -44,4 +45,16 @@
 
 ### Association
 -belongs_to :room
+-belongs_to :user
+
+## posts テーブル
+| Column              | Type       |                                |
+|---------------------|------------|--------------------------------|
+| birthday            | date       | null: false                    |
+| time_id             | integer    | null: false                    |
+| ground              | string     | null: false                    |
+| detail              | string     |                                |
+| user                | references | null: false, foreign_key: true |
+
+### Association
 -belongs_to :user
