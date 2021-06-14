@@ -1,0 +1,28 @@
+<%= render "shared/second-header" %>
+  <div class="registration">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんの情報"%>
+      </h2>
+      <div class="item-img-content">
+      <%= image_tag @user.image, class:"item-box-img" %>
+      </div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">ポジション</th>
+            <td class="table__col2"><%= @user.position.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">野球歴</th>
+            <td class="table__col2"><%= @user.baseball_history.name %></td>
+          </tr>
+        </tbody>
+      </table>
+      <% if user_signed_in? %>
+        <% if @user != current_user%>
+          <%= link_to "メッセージを送る", root_path, class:"item-red-btn" %>
+        <% end %>  
+      <% end %>
+    </div>
+  </div>  

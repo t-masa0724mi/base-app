@@ -37,7 +37,9 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: lightslategray;
+  background-image: url(1542771675.jpeg);
+  background-size: cover;
+  height: 100vh;
   margin-bottom: 48px;
   padding: 20px 0;
 
@@ -58,25 +60,27 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: red;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px white solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
   color: #fff;
-  background: #87CEFA;
+  background: whitesmoke;
 }
 
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: red;
   text-decoration: none;
   user-select: none;
+  border: 1px white solid;
+  border-radius: 3px;
 }
 .nav__logout:hover{
   opacity: 0.5;
@@ -120,6 +124,11 @@ a {
 }
 
 /* メイン */
+.main{
+  background-image: url(EW1cndgU8AE0Uyg.jpeg);
+  height: 100vh;
+  background-size: cover;
+}
 
 .greeting{
   margin-bottom: 20px;

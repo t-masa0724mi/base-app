@@ -1,11 +1,23 @@
+<%= render "shared/second-header" %>
 
-
-<%= form_with model: @user, url: new_user_registration_path, local: true do |f| %>
+<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>  
   <div class='form-header'>
     <h1 class='form-header-text'>
       会員情報入力
     </h1>
+  </div>
+  <div class="form-group">
+    <div class="form-text-wrap">
+      <label class="form-text">プロフィール画像</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class="click-upload">
+      <p>
+        クリックしてファイルをアップロード
+      </p>
+      <%= f.file_field :image, id:"item-image" %>
+    </div>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -81,7 +93,7 @@
       野球歴
       <span class="indispensable">必須</span>
     </div>  
-    <%= f.collection_select(:baseabll_history_id, BaseballHistory.all, :id, :name, {}, {class:"form__text", id:"user_position"}) %>
+    <%= f.collection_select(:baseball_history_id, BaseballHistory.all, :id, :name, {}, {class:"form__text", id:"user_position"}) %>
     <p class='info-text'>※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。</p>
   </div>
 

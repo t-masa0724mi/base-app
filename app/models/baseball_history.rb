@@ -11,6 +11,5 @@ class BaseballHistory < ActiveHash::Base
     { id: 9, name: '未経験'},
   ]
 include ActiveHash::Associations
-has_many :users 
+has_many :users
 end
- 
